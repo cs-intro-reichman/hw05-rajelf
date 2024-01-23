@@ -162,17 +162,15 @@ public class GameOfLife {
 	public static int count(int[][] board, int i, int j) {
 		//// Replace the following statement with your code.
 		int amountOfLiveCells = 0;
-		for(int row= (-1); row<= 1; row++){
-			for(int col = (- 1); col <=  1; col++){
-				if(row != 0 ||col != 0){
-					if(board[i-row][j-col] == 1){
-						//System.out.println("ROW r: " + row + "COL rajel " + col);
+		for(int row = -1; row <= 1; row++){
+			for(int col = -1; col <= 1; col++){
+				if(row != 0 || col != 0){
+					if(board[i + row][j + col] == 1){
 						amountOfLiveCells++;
 					}
 				}
 			}
 		}
-
 		return amountOfLiveCells;
 	}
 
