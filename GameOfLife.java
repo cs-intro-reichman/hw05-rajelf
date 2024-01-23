@@ -69,15 +69,15 @@ public class GameOfLife {
 	public static int[][] read(String fileName) {
 		In in = new In(fileName); // Constructs an In object for reading the input file
 		int rows = Integer.parseInt(in.readLine());
-		System.out.println(rows);//delete all souts
+		
 		
 		int cols = Integer.parseInt(in.readLine());
-		System.out.println(cols);
+
 		int[][] board = new int[rows + 2][cols + 2];
 		//// Replace the following statement with your code.
 		for (int row = 1; row < rows; row++) {
 			String currentLine = in.readLine();
-			System.out.println(currentLine);
+			
 			if (currentLine.equals("")) {
 				for (int col = 1; col < cols; col++) {
 					board[row][col] = 0;
