@@ -111,8 +111,13 @@ public class GameOfLife {
 				newBoard[row][col] = cellValue(board, row, col);
 			}
 		}
+		for(int row = 0; row<board.length; row++){
+			for(int col=0; col<board[0].length; col++){
+				board[row][col]= newBoard[row][col];
+			}
+		}
 		
-		return newBoard;
+		return board;
 	}
 
 	// Returns the value that cell (i,j) should have in the next generation.
