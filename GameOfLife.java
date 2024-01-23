@@ -161,7 +161,7 @@ public class GameOfLife {
 			for(int col = j - 1; col <= j + 1; col++){
 				if(row != i ||col != j){
 					if(board[row][col] == 1){
-						//System.out.println("ROW G: " + row + "COL rajel " + col);
+						//System.out.println("ROW r: " + row + "COL rajel " + col);
 						amountOfLiveCells++;
 					}
 				}
@@ -174,10 +174,10 @@ public class GameOfLife {
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
 	public static void print(int[][] arr) {
 		//// Write your code here.
-		// TODO: figure out what is printf and how to use it
-		for( int i = 0; i < arr.length ; i ++){
-			for(int j = 0; j < arr[i].length; j++){
-				System.out.print(arr[i][j] + " ");
+	
+		for( int i = 1; i < arr.length-1 ; i ++){
+			for(int j = 1; j < arr[i].length-1; j++){
+				System.out.printf("%3d", arr[i][j]);
 			}
 			System.out.println();
 		}
