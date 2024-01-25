@@ -13,8 +13,8 @@ public class GameOfLife {
 		//// (Run one test at a time).
 		//test1(fileName);
 		//// test2(fileName);
-		 test3(fileName, 3);
-		//// play(fileName);
+		// test3(fileName, 3);
+		play(fileName);
 	}
 
 	// Reads the data file and prints the initial board.
@@ -162,15 +162,17 @@ public class GameOfLife {
 	public static int count(int[][] board, int i, int j) {
 		//// Replace the following statement with your code.
 		int amountOfLiveCells = 0;
-		for(int row = -1; row <= 1; row++){
-			for(int col = -1; col <= 1; col++){
-				if(row != 0 || col != 0){
-					if(board[i + row][j + col] == 1){
+		for(int row= (-1); row<= 1; row++){
+			for(int col = (- 1); col <=  1; col++){
+				if(row != 0 ||col != 0){
+					if(board[i-row][j-col] == 1){
+						//System.out.println("ROW r: " + row + "COL rajel " + col);
 						amountOfLiveCells++;
 					}
 				}
 			}
 		}
+
 		return amountOfLiveCells;
 	}
 
