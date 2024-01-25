@@ -161,38 +161,33 @@ public class GameOfLife {
 	// 1.
 	public static int count(int[][] board, int i, int j) {
 		//// Replace the following statement with your code.
-		int amountOfLiveCells = 0;
+		int cellCount = 0;
 		for(int row= (-1); row<= 1; row++){
 			for(int col = (- 1); col <=  1; col++){
 				if(row != 0 ||col != 0){
-					if(board[i-row][j-col] == 1){
+					if(board[i+row][j+col] == 1){
 						//System.out.println("ROW r: " + row + "COL rajel " + col);
-						amountOfLiveCells++;
+						cellCount++;
 					}
 				}
 			}
 		}
 
-		return amountOfLiveCells;
+		return cellCount;
 	}
 
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
 	public static void print(int[][] arr) {
 		//// Write your code here.
 	
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
-				// Print 0 for the first and last row, and for the first and last column
-				if (i == 0 || i == arr.length - 1 || j == 0 || j == arr[i].length - 1) {
-					System.out.printf("%3d", 0);
-				} else {
-					// Print the actual array value for other positions
-					System.out.printf("%3d", arr[i][j]);
-				}
+		for( int i = 1; i < arr.length-1 ; i ++){
+			for(int j = 1; j < arr[i].length-1; j++){
+				System.out.printf("%3d", arr[i][j]);
 			}
 			System.out.println();
 		}
 	}
+
 	// Displays the board. Living and dead cells are represented by black and white
 	// squares, respectively.
 	// We use a fixed-size canvas of 900 pixels by 900 pixels for displaying game
