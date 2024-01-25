@@ -179,19 +179,20 @@ public class GameOfLife {
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
 	public static void print(int[][] arr) {
 		//// Write your code here.
+	
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				// Checks for first and last row, and first and last column
+				// Print 0 for the first and last row, and for the first and last column
 				if (i == 0 || i == arr.length - 1 || j == 0 || j == arr[i].length - 1) {
-					System.out.printf("%3d", 0); // Print 0 for borders
+					System.out.printf("%3d", 0);
 				} else {
-					System.out.printf("%3d", arr[i][j]); // Print the actual array value
+					// Print the actual array value for other positions
+					System.out.printf("%3d", arr[i][j]);
 				}
 			}
 			System.out.println();
 		}
 	}
-
 	// Displays the board. Living and dead cells are represented by black and white
 	// squares, respectively.
 	// We use a fixed-size canvas of 900 pixels by 900 pixels for displaying game
