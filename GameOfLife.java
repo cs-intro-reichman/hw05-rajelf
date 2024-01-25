@@ -69,35 +69,21 @@ public class GameOfLife {
 	public static int[][] read(String fileName) {
 		In in = new In(fileName); // Constructs an In object for reading the input file
 		int rows = Integer.parseInt(in.readLine());
-		
-		
 		int cols = Integer.parseInt(in.readLine());
-
+	
 		int[][] board = new int[rows + 2][cols + 2];
-		//// Replace the following statement with your code.
-		for (int row = 1; row < rows; row++) {
-			String currentLine = in.readLine();
-			
-			if (currentLine.equals("")) {
-				for (int col = 1; col < cols; col++) {
-					board[row][col] = 0;
-				}
-			} else {
-				for (int col = 1; col < cols; col++) {
-					if (col < currentLine.length()) {
-						char currentCharacter = currentLine.charAt(col);
-						if (currentCharacter == '.') {
-							board[row][col] = 0;
-						} else if (currentCharacter == 'x') {
-							board[row][col] = 1;
-						}
-					} else {
-						board[row][col] = 0;
-					}
+		
+		for (int i = 1; i <= rows; i++) {
+			String line = in.readLine();
+			for (int j = 1; j <= Math.min(line.length(), cols); j++) {
+				if (line.charAt(j - 1) == 'x') {
+					board[i][j] = 1;
+				} else if (line.charAt(j - 1) == '.') {
+					board[i][j] = 0;
 				}
 			}
 		}
-
+	
 		return board;
 	}
 
