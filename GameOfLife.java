@@ -13,8 +13,8 @@ public class GameOfLife {
 		//// (Run one test at a time).
 		//test1(fileName);
 		//// test2(fileName);
-		// test3(fileName, 3);
-		play(fileName);
+		 test3(fileName, 3);
+		//play(fileName);
 	}
 
 	// Reads the data file and prints the initial board.
@@ -179,10 +179,14 @@ public class GameOfLife {
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
 	public static void print(int[][] arr) {
 		//// Write your code here.
-	
-		for( int i = 1; i < arr.length-1 ; i ++){
-			for(int j = 1; j < arr[i].length-1; j++){
-				System.out.printf("%3d", arr[i][j]);
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				// Checks for first and last row, and first and last column
+				if (i == 0 || i == arr.length - 1 || j == 0 || j == arr[i].length - 1) {
+					System.out.printf("%3d", 0); // Print 0 for borders
+				} else {
+					System.out.printf("%3d", arr[i][j]); // Print the actual array value
+				}
 			}
 			System.out.println();
 		}
